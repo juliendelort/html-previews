@@ -1,1 +1,85 @@
 
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chicos PLP Preview</title>
+    <style>
+      .product-tile {
+        margin-bottom: 1rem;
+      }
+
+      .product-tile .state {
+        display: none;
+      }
+
+      /* No data-loaded yet: still fetching config/looks */
+      .product-tile:has(findmine-widget:not([data-loaded])) .state-loading {
+        display: block;
+      }
+
+      /* data-loaded + data-has-looks: ready to shop the look */
+      .product-tile:has(findmine-widget[data-loaded][data-has-looks])
+        .state-ready {
+        display: inline-block;
+      }
+
+      /* data-loaded but no data-has-looks: nothing to show */
+      .product-tile:has(findmine-widget[data-loaded]:not([data-has-looks]))
+        .state-empty {
+        display: block;
+      }
+    </style>
+
+       <script
+    type="module"
+    src="https://jsv4.fmv3.findmine.com/branch-feature/find-3650-chicos-plp-widget-moving-forward-with-design/chicos-plp/module.js"
+  ></script>
+  </head>
+
+  <body>
+    <div class="product-tile">
+      <findmine-widget
+        class="shop-the-look-widget"
+        config_id="0574c84c-1839-4b7e-b3b1-eb1b404e7329"
+        application="02913ADE068FE2DA43B0"
+        product_id="570399813"
+        product_color_id="6267"
+        no_cache="true"
+      ></findmine-widget>
+      <p class="state state-loading">Loading...(product 1)</p>
+      <button class="state state-ready shop-the-look">
+        Shop the Look (product 1)
+      </button>
+      <p class="state state-empty">No looks found (product 1)</p>
+    </div>
+
+    <div class="product-tile">
+      <findmine-widget
+        class="shop-the-look-widget"
+        config_id="0574c84c-1839-4b7e-b3b1-eb1b404e7329"
+        application="02913ADE068FE2DA43B0"
+        product_id="570394817"
+        product_color_id="6121"
+        no_cache="true"
+      ></findmine-widget>
+      <p class="state state-loading">Loading...(product 2)</p>
+      <button class="state state-ready shop-the-look">
+        Shop the Look (product 2)
+      </button>
+      <p class="state state-empty">No looks found (product 2)</p>
+    </div>
+
+    <script type="module" src="/src/main.tsx"></script>
+    <script type="module">
+      document.querySelectorAll('.shop-the-look').forEach((button) => {
+        button.addEventListener('click', () => {
+          button
+            .closest('.product-tile')
+            .querySelector('.shop-the-look-widget')
+            ?.show?.();
+        });
+      });
+    </script>
+  </body>
+</html>
