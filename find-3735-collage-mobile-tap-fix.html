@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FIND-3735: Collage mobile tap fix preview</title>
+    <script
+      type="module"
+      src="https://jsv4.fmv3.findmine.com/branch-juliendelort/chicos-brands-collage-on-mobile/chicos-collage/module.js?tag=findmine-widget-chicos"
+    ></script>
+    <script
+      type="module"
+      src="https://jsv4.fmv3.findmine.com/branch-juliendelort/chicos-brands-collage-on-mobile/whbm-collage/module.js?tag=findmine-widget-whbm"
+    ></script>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        max-width: 480px;
+        margin: 0 auto;
+        padding: 1rem;
+      }
+      h1 {
+        font-size: 1.1rem;
+      }
+      p {
+        color: #444;
+        font-size: 0.95rem;
+      }
+      h2 {
+        font-size: 1rem;
+        margin-top: 2.5rem;
+        border-top: 1px solid #ddd;
+        padding-top: 1.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>FIND-3735 — Collage mobile tap fix</h1>
+    <p>
+      PR
+      <a href="https://github.com/findmine/findmine-v4/pull/475">#475</a>:
+      on mobile/tablet, tapping anywhere on the collage now opens the product
+      panel (not just the small hamburger icon in the corner). Try it on your
+      phone, or narrow this browser window to a mobile width.
+    </p>
+
+    <h2>Chico's</h2>
+    <findmine-widget-chicos
+      config_id="fd07c15c-f6e6-4507-afb9-7278ca6aceb6"
+      application="3685C4F41DA01565693E"
+      product_id="570381750"
+      product_color_id="657"
+      no_cache="true"
+    ></findmine-widget-chicos>
+
+    <h2>WHBM</h2>
+    <findmine-widget-whbm
+      config_id="7c0f4796-8aae-4091-86c5-7ad08dfc787a"
+      application="24861F8F972051AB5BEA"
+      product_id="570377562"
+      product_color_id="001"
+      no_cache="true"
+    ></findmine-widget-whbm>
+  </body>
+</html>
